@@ -1,0 +1,37 @@
+{
+  "name": "with-next",
+  "version": "0.0.8",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "refractor": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "@types/refractor": "^3.0.0"
+  },
+  "@remirror": {
+    "tsconfigs": {
+      "src": {
+        "compilerOptions": {
+          "allowJs": true
+        }
+      },
+      "./": {
+        "include": [
+          "src",
+          "next.config.js",
+          "next-env.d.ts"
+        ]
+      }
+    }
+  }
+}

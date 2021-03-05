@@ -1,0 +1,26 @@
+{
+  "__AUTO_GENERATED__": [
+    "To update the configuration edit the following field.",
+    "`package.json > @bibio > tsconfigs > 'src'`",
+    "",
+    "Then run: `pnpm -w generate:ts`"
+  ],
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": [],
+    "declaration": false,
+    "noEmit": true
+  },
+  "include": ["./"],
+  "references": [
+    {
+      "path": "../../../packages/bibio__core-helpers/src"
+    },
+    {
+      "path": "../../../packages/bibio__icons/src"
+    },
+    {
+      "path": "../../../packages/bibio__playground/src"
+    }
+  ]
+}

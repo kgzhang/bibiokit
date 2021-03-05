@@ -1,0 +1,3 @@
+# Generated files we don't want to see in code review/diff
+docs/generated/gatsby.ts binary
+**/__image_snapshots__/*.* binary

@@ -1,0 +1,18 @@
+{
+  "include": [],
+  "files": [],
+  "references": [
+    {
+      "path": "examples/storybook-react/__e2e__"
+    },
+    {
+      "path": "examples/storybook-react/src"
+    },
+    {
+      "path": "examples/with-next/__e2e__"
+    },
+    {
+      "path": "examples/with-next/src"
+    }
+  ]
+}
