@@ -7,15 +7,7 @@
   ],
   "extends": "../../../support/tsconfig.base.json",
   "compilerOptions": {
-    "types": [
-      "expect-playwright/global",
-      "jest-playwright-preset",
-      "jest",
-      "jest-extended",
-      "snapshot-diff",
-      "playwright",
-      "node"
-    ],
+    "types": ["jest", "jest-extended", "snapshot-diff", "node"],
     "declaration": false,
     "noEmit": true,
     "allowJs": true,

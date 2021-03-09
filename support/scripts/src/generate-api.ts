@@ -55,10 +55,7 @@ async function runApiExtractor() {
   const promises: Array<Promise<void>> = [];
 
   for (const json of packages) {
-    if (
-      json.private ||
-      ['jest-prosemirror', 'jest-bibio', '@bibio/cli'].includes(json.name)
-    ) {
+    if (json.private || ['@bibio/cli'].includes(json.name)) {
       continue;
     }
 

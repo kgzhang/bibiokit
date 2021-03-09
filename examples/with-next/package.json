@@ -1,6 +1,6 @@
 {
   "name": "with-next",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -8,30 +8,32 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "@elastic/datemath": "^5.0.3",
+    "@elastic/eui": "^31.0.0",
+    "@preconstruct/next": "^2.0.0",
+    "@bibio/client": "workspace:1.0.0",
+    "@bibio/ui": "workspace:1.0.0",
+    "@bibio/schema": "workspace:1.0.0",
+    "apollo-server-micro": "^2.19.0",
+    "graphql": "^15.4.0",
+    "micro-cors": "^0.1.1",
+    "moment": "^2.29.1",
     "next": "10.0.7",
+    "next-with-apollo": "^5.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "refractor": "^3.3.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.15.0",
+    "@graphql-codegen/fragment-matcher": "^1.15.0",
+    "@graphql-codegen/introspection": "1.15.0",
+    "@graphql-codegen/typescript": "1.15.0",
+    "@graphql-codegen/typescript-operations": "1.15.0",
+    "@graphql-codegen/typescript-react-apollo": "1.15.0",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
     "@types/refractor": "^3.0.0"
-  },
-  "@remirror": {
-    "tsconfigs": {
-      "src": {
-        "compilerOptions": {
-          "allowJs": true
-        }
-      },
-      "./": {
-        "include": [
-          "src",
-          "next.config.js",
-          "next-env.d.ts"
-        ]
-      }
-    }
   }
 }

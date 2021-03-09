@@ -1,0 +1,59 @@
+{
+  "name": "@bibio/ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Consume a bibio uitor with lit web components",
+  "keywords": [
+    "bibio"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/bibio-ui.esm.js",
+      "require": "./dist/bibio-ui.cjs.js",
+      "browser": "./dist/bibio-ui.browser.esm.js",
+      "types": "./dist/bibio-ui.cjs.d.ts",
+      "default": "./dist/bibio-ui.esm.js"
+    },
+    "./package.json": "./package.json",
+    "./types/*": "./dist/declarations/src/*.d.ts"
+  },
+  "main": "dist/bibio-ui.cjs.js",
+  "module": "dist/bibio-ui.esm.js",
+  "browser": {
+    "./dist/bibio-ui.cjs.js": "./dist/bibio-ui.browser.cjs.js",
+    "./dist/bibio-ui.esm.js": "./dist/bibio-ui.browser.esm.js"
+  },
+  "types": "dist/bibio-ui.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.13.7",
+    "@bibio/client": "workspace:1.0.0",
+    "@types/react": "^17.0.2",
+    "react": "^17.0.1",
+    "use-debounce": "^5.0.3"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3.2.5",
+    "@elastic/eui": "^31.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "react": "17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.2.5",
+    "@elastic/datemath": "^5.0.3",
+    "@elastic/eui": "^31.0.0",
+    "moment": "^2.29.1"
+  },
+  "@bibio": {
+    "sizeLimit": "50 KB"
+  },
+  "rn:dev": "src/index.ts"
+}

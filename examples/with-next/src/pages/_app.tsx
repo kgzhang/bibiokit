@@ -1,10 +1,6 @@
-import App from 'next/app';
+import '@elastic/eui/dist/eui_theme_light.css'
 
-export default class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <div>Hahahah</div>
-    );
-  }
+
+export default ({ Component, pageProps }) => {
+  return <Component {...pageProps} />
 }

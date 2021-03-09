@@ -4,12 +4,12 @@ module.exports = withPreconstruct({
   devIndicators: {
     autoPrerender: false,
   },
-  webpack: (config) => {
-    const alias = ((config.resolve ??= {}).alias ??= {});
+  // webpack: (config) => {
+  //   const alias = ((config.resolve ??= {}).alias ??= {});
 
-    // Use emotion as an alias for linaria.
-    alias['@linaria/core'] = '@emotion/css';
+  //   // Use emotion as an alias for linaria.
+  //   alias['@linaria/core'] = '@emotion/css';
 
-    return config;
-  },
+  //   return config;
+  // },
 });

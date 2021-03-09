@@ -1,0 +1,55 @@
+{
+  "name": "@bibio/cli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Consume a bibio clitor with lit web components",
+  "keywords": [
+    "bibio"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/bibio-cli.esm.js",
+      "require": "./dist/bibio-cli.cjs.js",
+      "browser": "./dist/bibio-cli.browser.esm.js",
+      "types": "./dist/bibio-cli.cjs.d.ts",
+      "default": "./dist/bibio-cli.esm.js"
+    },
+    "./package.json": "./package.json",
+    "./types/*": "./dist/declarations/src/*.d.ts"
+  },
+  "main": "dist/bibio-cli.cjs.js",
+  "module": "dist/bibio-cli.esm.js",
+  "browser": {
+    "./dist/bibio-cli.cjs.js": "./dist/bibio-cli.browser.cjs.js",
+    "./dist/bibio-cli.esm.js": "./dist/bibio-cli.browser.esm.js"
+  },
+  "types": "dist/bibio-cli.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.13.7",
+    "@elastic/elasticsearch": "^7.10.0",
+    "@types/inquirer": "^7.3.1",
+    "date-fns": "^2.16.1",
+    "elasticsearch": "^16.7.2",
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.21",
+    "yargs": "^16.2.0"
+  },
+  "peerDependencies": {
+    "fs": "*",
+    "path": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "@bibio": {
+    "sizeLimit": "50 KB"
+  },
+  "rn:dev": "src/index.ts",
+  "devDependencies": {
+    "@types/lodash": "^4.14.168"
+  }
+}

@@ -16,8 +16,8 @@
   },
   "include": ["./"],
   "references": [
-    {
-      "path": "../../../../packages/bibio__core-helpers/src"
-    }
+    // {
+    //   "path": "../../../../packages/bibio__core-helpers/src"
+    // }
   ]
 }

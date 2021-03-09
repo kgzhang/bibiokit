@@ -12,15 +12,5 @@
     "noEmit": true
   },
   "include": ["./"],
-  "references": [
-    {
-      "path": "../../../packages/bibio__core-helpers/src"
-    },
-    {
-      "path": "../../../packages/bibio__icons/src"
-    },
-    {
-      "path": "../../../packages/bibio__playground/src"
-    }
-  ]
+  "references": []
 }

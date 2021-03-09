@@ -1,18 +1,21 @@
 {
-  "include": [],
-  "files": [],
-  "references": [
-    {
-      "path": "examples/storybook-react/__e2e__"
-    },
-    {
-      "path": "examples/storybook-react/src"
-    },
-    {
-      "path": "examples/with-next/__e2e__"
-    },
-    {
-      "path": "examples/with-next/src"
-    }
-  ]
+  "extends": "./support/tsconfig.base.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "jest",
+      "jest-extended",
+      "jest-axe",
+      "@testing-library/jest-dom",
+      "snapshot-diff"
+    ],
+    "noEmit": true,
+    "importsNotUsedAsValues": "error",
+    "skipLibCheck": true,
+    "plugins": [
+      { "name": "typescript-snapshots-plugin" },
+      { "name": "typescript-plugin-css-modules" }
+    ]
+  },
+  "include": ["packages/**/src", "global.d.ts"]
 }

@@ -1,0 +1,53 @@
+{
+  "name": "@bibio/schema",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Consume a bibio schemator with lit web components",
+  "keywords": [
+    "bibio"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/bibio-schema.esm.js",
+      "require": "./dist/bibio-schema.cjs.js",
+      "browser": "./dist/bibio-schema.browser.esm.js",
+      "types": "./dist/bibio-schema.cjs.d.ts",
+      "default": "./dist/bibio-schema.esm.js"
+    },
+    "./package.json": "./package.json",
+    "./types/*": "./dist/declarations/src/*.d.ts"
+  },
+  "main": "dist/bibio-schema.cjs.js",
+  "module": "dist/bibio-schema.esm.js",
+  "browser": {
+    "./dist/bibio-schema.cjs.js": "./dist/bibio-schema.browser.cjs.js",
+    "./dist/bibio-schema.esm.js": "./dist/bibio-schema.browser.esm.js"
+  },
+  "types": "dist/bibio-schema.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.13.7",
+    "@elastic/elasticsearch": "^7.9.1",
+    "agentkeepalive": "^4.1.3",
+    "dataloader": "^2.0.0",
+    "graphql-tag": "^2.10.3",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.168",
+    "apollo-server-micro": "^2.19.0",
+    "express": "^4.17.1",
+    "nock": "^13.0.5",
+    "supertest": "^6.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "@bibio": {
+    "sizeLimit": "50 KB"
+  },
+  "rn:dev": "src/index.ts"
+}

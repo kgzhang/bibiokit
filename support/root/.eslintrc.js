@@ -363,9 +363,6 @@ let config = {
         '**/*.stories.tsx',
         '**/*.stories.ts',
         'packages/bibio__cli/**',
-        'packages/bibio__playground/**',
-        'packages/bibio__extension-emoji/src/data/*.ts',
-        'packages/bibio__svelte/rollup.config.js',
       ],
       rules: { 'import/no-default-export': 'off' },
     },
@@ -382,12 +379,7 @@ let config = {
       },
     },
     {
-      files: [
-        'support/**',
-        'packages/testing/**/*.{js,ts}',
-        'packages/bibio__playground/**',
-        'packages/bibio__playground-deprecated/**',
-      ],
+      files: ['support/**', 'packages/testing/**/*.{js,ts}'],
       rules: {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/no-var-requires': 'off',
@@ -414,7 +406,6 @@ let config = {
         'support/**',
         'packages/testing/**',
         'examples/**',
-        'packages/bibio__playground/**',
         'packages/bibio__core-utils/src/keyboard-utils.ts',
       ],
       rules: {
@@ -422,40 +413,12 @@ let config = {
       },
     },
     {
-      files: ['packages/bibio__playground/**', 'packages/testing/**'],
+      files: ['packages/testing/**'],
       rules: { '@typescript-eslint/no-var-requires': 'off' },
     },
     {
-      files: [
-        '**/*extension.ts',
-        '**/*extension.tsx',
-        'packages/bibio__core/src/manager/bibio-manager.ts',
-        'packages/bibio__core/src/framework/*.ts',
-        'packages/bibio__core/src/extension/extension-base.ts',
-      ],
+      files: ['**/*extension.ts', '**/*extension.tsx'],
       rules: { '@typescript-eslint/method-signature-style': 'off' },
-    },
-    {
-      files: ['packages/bibio__styles/src/*.tsx'],
-      // Turn these rules off to import `react` for TypeScript
-      rules: {
-        '@typescript-eslint/no-unused-vars-experimental': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-      },
-    },
-    {
-      files: [
-        'examples/with-react-native/**/*.{ts,tsx}',
-        'packages/bibio__react-native/**/*.{ts,tsx}',
-      ],
-      rules: {
-        'react-native/no-unused-styles': ['error'],
-        'react-native/split-platform-components': ['error'],
-        'react-native/no-inline-styles': ['error'],
-        'react-native/no-color-literals': ['error'],
-        // 'react-native/no-raw-text': ['error'],
-        'react-native/no-single-element-style-arrays': ['error'],
-      },
     },
   ],
 };

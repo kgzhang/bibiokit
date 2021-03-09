@@ -1,13 +1,11 @@
-import { NextPage } from 'next';
-import Link from 'next/link';
+import { withSearchkit, SearchkitClient } from "@bibio/client"
+import withApollo from "../hocs/with-apollo"
+import dynamic from 'next/dynamic'
+
+const Search = dynamic(() => import('../components/index'), { ssr: false })
 
 
-const IndexPage: NextPage = () => {
-  return (
-    <div>
-      Hahahs
-    </div>
-  );
-};
-
-export default IndexPage;
+export default withApollo(withSearchkit(Search, () => {
+  const api = new SearchkitClient({ searchOnLoad: true })
+  return api
+}))

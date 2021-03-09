@@ -4,7 +4,6 @@
 import 'jest-extended';
 
 import diffHtml from 'diffable-html';
-import { prosemirrorSerializer } from 'jest-prosemirror';
 import { getSnapshotDiffSerializer, toMatchDiffSnapshot } from 'snapshot-diff';
 
 expect.addSnapshotSerializer(getSnapshotDiffSerializer());
@@ -31,8 +30,6 @@ expect.addSnapshotSerializer({
     return diffHtml(val).trim();
   },
 });
-
-expect.addSnapshotSerializer(prosemirrorSerializer);
 
 interface PuppeteerHtml {
   _: 'HTML';

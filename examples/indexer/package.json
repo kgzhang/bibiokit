@@ -1,0 +1,19 @@
+{
+  "name": "indexer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\"}' ts-node ./src/index.ts",
+    "parks": "ts-node ./src/parks/config.ts",
+    "bikes": "ts-node ./src/bike-hire-stations/config.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bibio/cli": "workspace:1.0.0",
+    "ts-node": "^9.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
