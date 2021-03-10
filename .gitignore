@@ -169,3 +169,4 @@ cc-reporter
 
 /.detoxrc.json
 /typedoc.json
+data

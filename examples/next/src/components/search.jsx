@@ -1,9 +1,17 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
+import { useSearchkitQuery } from '@bibio/client';
+import React, { useState } from 'react';
+import { HitsList, HitsGrid } from './searchkit/Hits';
 import {
-  EuiButtonGroup,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiHorizontalRule,
+  FacetsList,
+  SearchBar,
+  Pagination,
+  ResetSearchButton,
+  SelectedFilters,
+  SortingSelector,
+} from '@bibio/ui';
+
+import {
   EuiPage,
   EuiPageBody,
   EuiPageContent,
@@ -13,20 +21,12 @@ import {
   EuiPageHeader,
   EuiPageHeaderSection,
   EuiPageSideBar,
-  EuiTitle} from '@elastic/eui'
-import React from 'react'
-import { useState } from 'react'
-import { useSearchkitQuery } from '@bibio/client'
-import {
-  FacetsList,
-  Pagination,
-  ResetSearchButton,
-  SearchBar,
-  SelectedFilters,
-  SortingSelector
-} from "@bibio/ui"
-
-import { HitsGrid,HitsList } from './searchkit/tits'
+  EuiTitle,
+  EuiHorizontalRule,
+  EuiButtonGroup,
+  EuiFlexGroup,
+  EuiFlexItem,
+} from '@elastic/eui';
 
 const query = gql`
   query resultSet($query: String, $filters: [SKFiltersSet], $page: SKPageInput, $sortBy: String) {
@@ -93,23 +93,23 @@ const query = gql`
       }
     }
   }
-`
+`;
 
 const Page = () => {
-  const { data, loading } = useSearchkitQuery(query)
-  const [viewType, setViewType] = useState('list')
-  const Facets = FacetsList([])
+  const { data, loading } = useSearchkitQuery(query);
+  const [viewType, setViewType] = useState('list');
+  const Facets = FacetsList([]);
   return (
     <EuiPage>
       <EuiPageSideBar>
         <SearchBar loading={loading} />
-        <EuiHorizontalRule margin="m" />
+        <EuiHorizontalRule margin='m' />
         <Facets data={data?.results} loading={loading} />
       </EuiPageSideBar>
-      <EuiPageBody component="div">
+      <EuiPageBody component='div'>
         <EuiPageHeader>
           <EuiPageHeaderSection>
-            <EuiTitle size="l">
+            <EuiTitle size='l'>
               <SelectedFilters data={data?.results} loading={loading} />
             </EuiTitle>
           </EuiPageHeaderSection>
@@ -120,7 +120,7 @@ const Page = () => {
         <EuiPageContent>
           <EuiPageContentHeader>
             <EuiPageContentHeaderSection>
-              <EuiTitle size="s">
+              <EuiTitle size='s'>
                 <h2>{data?.results.summary.total} Results</h2>
               </EuiTitle>
             </EuiPageContentHeaderSection>
@@ -130,35 +130,35 @@ const Page = () => {
                   <SortingSelector data={data?.results} loading={loading} />
                 </EuiFlexItem>
                 <EuiFlexItem grow={2}>
-                <EuiButtonGroup
-                  legend=""
-                  options={[
-                    {
-                      id: `grid`,
-                      label: 'Grid'
-                    },
-                    {
-                      id: `list`,
-                      label: 'List'
-                    }
-                  ]}
-                  idSelected={viewType}
-                  onChange={(id) => setViewType(id)}
-                />
+                  <EuiButtonGroup
+                    legend=''
+                    options={[
+                      {
+                        id: `grid`,
+                        label: 'Grid',
+                      },
+                      {
+                        id: `list`,
+                        label: 'List',
+                      },
+                    ]}
+                    idSelected={viewType}
+                    onChange={(id) => setViewType(id)}
+                  />
                 </EuiFlexItem>
               </EuiFlexGroup>
             </EuiPageContentHeaderSection>
           </EuiPageContentHeader>
           <EuiPageContentBody>
             {viewType === 'grid' ? <HitsGrid data={data} /> : <HitsList data={data} />}
-            <EuiFlexGroup justifyContent="spaceAround">
+            <EuiFlexGroup justifyContent='spaceAround'>
               <Pagination data={data?.results} />
             </EuiFlexGroup>
           </EuiPageContentBody>
         </EuiPageContent>
       </EuiPageBody>
     </EuiPage>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

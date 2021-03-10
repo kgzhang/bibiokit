@@ -1,26 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { SearchkitProvider, SearchkitClient } from './search';
 
-import { SearchkitClient,SearchkitProvider } from './search'
+const defaultSearchkitClient = () => new SearchkitClient();
+let _client = null;
 
-const defaultSearchkitClient = () => new SearchkitClient()
-let _client: SearchkitClient | null = null
-
-export default (Page: JSX.Element, createSearchkitClient = defaultSearchkitClient) => {
+export default (Page, createSearchkitClient = defaultSearchkitClient) => {
   const getClient = () => {
     if (typeof window === 'undefined') {
-      return createSearchkitClient()
+      return createSearchkitClient();
     }
-
     if (!_client) {
-      _client = createSearchkitClient()
+      _client = createSearchkitClient();
     }
-
-    return _client
-  }
+    return _client;
+  };
 
   return () => (
     <SearchkitProvider client={getClient()}>
       <Page />
     </SearchkitProvider>
-  )
-}
+  );
+};
